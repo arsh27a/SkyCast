@@ -1,0 +1,28 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* NAVBAR CSS */
+header {
+  background-color: #131214;
+}
+header img {
+  height: 10vh;
+  width: 10vh;
+}
+header input {
+  padding: 0.5rem;
+  border-radius: 2rem;
+  margin-right: 0.4rem;
+}
+header button {
+  border: white;
+  padding: 0.5rem;
+  border-radius: 2rem;
+}
+header i {
+  /* height: 8vh;
+  width: 8vw; */
+}
