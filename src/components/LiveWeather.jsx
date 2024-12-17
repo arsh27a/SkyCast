@@ -29,7 +29,7 @@ const LiveWeather = ({ weatherData, airData, forecastData }) => {
     }
     setNextDays(days);
   };
-  // to forcast data
+  // useEffect for forcast data
   useEffect(() => {
     if (forecastData) {
       getNextDays();
@@ -41,7 +41,7 @@ const LiveWeather = ({ weatherData, airData, forecastData }) => {
     return `https://openweathermap.org/img/wn/${iconId}@2x.png`;
   };
 
-  // To fetch live weather data
+  //   fetch live weather data
   useEffect(() => {
     const liveWeatherFetch = async (latitude, longitude) => {
       try {
@@ -50,12 +50,10 @@ const LiveWeather = ({ weatherData, airData, forecastData }) => {
           `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`
         );
         setLiveWeatherData(response.data);
-        console.log("live weather data", response.data);
         // set data to local storage
         localStorage.setItem("liveWeatherData", JSON.stringify(response.data));
       } catch (apiError) {
         setError("Failed to fetch weather data.");
-        console.error("API Error:", apiError);
       }
     };
     // getting current location
@@ -63,12 +61,10 @@ const LiveWeather = ({ weatherData, airData, forecastData }) => {
       navigator.geolocation.getCurrentPosition(
         (position) => {
           const { longitude, latitude } = position.coords;
-          console.log(position);
           liveWeatherFetch(latitude, longitude);
         },
         (geoError) => {
           setError("Unable to access location.");
-          console.error("Geolocation Error:", geoError);
         }
       );
     } else {

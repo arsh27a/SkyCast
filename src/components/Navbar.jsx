@@ -11,7 +11,6 @@ const Navbar = ({ setWeatherData, setForecastData, setAirData }) => {
     try {
       const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}`; // api call for lat lon
       const response = await axios.get(url);
-      // console.log(response.data, " base API Response");
       const { lat, lon } = response.data.coord; // Use coordinates from 'data'
       setWeatherData(response.data);
       airWeatherfetch(lat, lon);
@@ -26,7 +25,6 @@ const Navbar = ({ setWeatherData, setForecastData, setAirData }) => {
       try {
         const searchApiUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&cnt=7&appid=${apiKey}`;
         const searchedDataResponse = await axios.get(searchApiUrl);
-        // console.log("searchedDataResponse", searchedDataResponse.data);
         setForecastData(searchedDataResponse.data);
       } catch (error) {
         console.error("Error fetching   serached data:", error);
@@ -41,7 +39,6 @@ const Navbar = ({ setWeatherData, setForecastData, setAirData }) => {
 
         // Fetch air pollution data using coordinates
         const airPollutionResponse = await axios.get(airPollutionUrl);
-        // console.log(airPollutionResponse.data, "AIR api");
         setAirData(airPollutionResponse.data);
       } catch (error) {
         console.error("Error fetching air pollution data:", error);
@@ -49,24 +46,17 @@ const Navbar = ({ setWeatherData, setForecastData, setAirData }) => {
     }
   };
 
+  // handle user input
   const handleInput = (e) => {
     const value = e.target.value;
     setSearchByUser(value);
-    console.log(value);
   };
   // prevent default part
   const handleSubmit = (e) => {
     e.preventDefault();
     searchBaseData(searchByUser);
   };
-  // handle key down
-  // const handleKeyDown = (evt) => {
-  //   if (evt != Enter) {
-  //     alert("Kindly enter the city name to proceed.");
-  //     return;
-  //   }
-  //   searchBaseData(searchByUser);
-  // };
+
   return (
     <div className="navbar-container">
       <header className="py-3    ml-3 mr-3 mb-3 fixed-top">
@@ -89,7 +79,6 @@ const Navbar = ({ setWeatherData, setForecastData, setAirData }) => {
                 value={searchByUser}
                 className="text-black"
                 onChange={handleInput}
-                // onKeyDown={handleKeyDown}
               />
               <button type="submit" className="submit">
                 <i className="bi bi-search"></i>
