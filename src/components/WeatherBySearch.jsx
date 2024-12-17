@@ -2,10 +2,7 @@ import React from "react";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 
 const WeatherBySearch = ({ weatherData, airData, forecastData }) => {
-  // Ensure  weatherData and airData are provided
-  console.log(weatherData, " weatherData got");
-  console.log(airData, "AIR` got");
-  console.log(forecastData, "FORECAST got");
+  //  check for data
   if (!weatherData || !airData || !forecastData) {
     return (
       <p>No weather weatherData available. Please search for a location.</p>

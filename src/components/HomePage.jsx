@@ -7,7 +7,6 @@ const HomePage = () => {
   const [weatherData, setWeatherData] = useState(null); // State to hold API data
   const [forecastData, setForecastData] = useState(null); // Stores 7-day forecast
   const [airData, setAirData] = useState(null); // hold air data
-  // console.log("i am homepage dtaa", weatherData);
 
   return (
     <div className="home-container">
