@@ -3,17 +3,19 @@
   padding: 0;
   box-sizing: border-box;
 }
-
+.app {
+  background-color: #65c2f5;
+}
 /* NAVBAR CSS */
 header {
-  background-color: #131214;
+  background-color: #0487e2;
 }
 header img {
   height: 10vh;
   width: 10vh;
 }
 header input {
-  padding: 0.5rem;
+  padding: 0.8rem;
   border-radius: 2rem;
   margin-right: 0.4rem;
 }
@@ -21,8 +23,41 @@ header button {
   border: white;
   padding: 0.5rem;
   border-radius: 2rem;
+  width: 3rem;
 }
-header i {
-  /* height: 8vh;
-  width: 8vw; */
+/* body container css */
+.body-container {
+  display: grid;
+}
+/* liveaWeather-container */
+
+img {
+  height: 5vh;
+}
+.top-left img {
+  height: 20vh;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+/* serached weather container */
+.right-content {
+  background-color: #09b1ec;
+}
+/* searchedWeather */
+
+.small-container {
+  background-color: #65c2f5;
+}
+.bg-d {
+  background-color: #09b1ec;
+}
+.bg-l {
+  background-color: #65c2f5;
+}
+
+@media (max-width: 430px) {
+  .mt-xxs-6 {
+    margin-top: 6rem !important; /* Adjust as needed */
+  }
 }
