@@ -14,7 +14,7 @@ const LiveWeather = ({ weatherData, airData, forecastData }) => {
     const days = [];
     const currentDate = new Date();
 
-    for (let i = 1; i <= 6; i++) {
+    for (let i = 1; i <= 8; i++) {
       const nextDay = new Date(currentDate);
       nextDay.setDate(currentDate.getDate() + i);
 
@@ -83,7 +83,7 @@ const LiveWeather = ({ weatherData, airData, forecastData }) => {
                 {liveWeatherData ? (
                   <>
                     <p className="temperature">
-                      {liveWeatherData.main.temp.toFixed(0)}
+                      {Math.round(liveWeatherData.main.temp)}
                       °C{" "}
                     </p>
                     <img
@@ -125,7 +125,7 @@ const LiveWeather = ({ weatherData, airData, forecastData }) => {
             ) : (
               <div className="bottom-left bg-d  rounded-5  p-4 mt-4">
                 <h2 className="text-center p-3">
-                  6 Days Forecast in {forecastData.city.name}
+                  8 Days Forecast in {forecastData.city.name}
                 </h2>
                 <div className="forecast bg-l rounded-5">
                   {nextDays.map((item, index) => (

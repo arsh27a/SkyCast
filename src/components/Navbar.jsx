@@ -23,7 +23,7 @@ const Navbar = ({ setWeatherData, setForecastData, setAirData }) => {
   const forecastWeatherFetch = async (lat, lon) => {
     if (lat && lon) {
       try {
-        const searchApiUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&cnt=7&appid=${apiKey}`;
+        const searchApiUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&cnt=8&appid=${apiKey}`;
         const searchedDataResponse = await axios.get(searchApiUrl);
         setForecastData(searchedDataResponse.data);
       } catch (error) {
