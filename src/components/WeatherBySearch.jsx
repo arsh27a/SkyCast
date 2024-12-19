@@ -27,9 +27,7 @@ const WeatherBySearch = ({ weatherData, airData, forecastData }) => {
           <div className="top-right">
             <div className="location-container mb-2 d-flex justify-content-between gap-4 align-items-center">
               <h2>{weatherData.name}</h2>
-              <h3>
-                {Math.round(weatherData.main.temp - (273.15).toFixed(2))}°c
-              </h3>
+              <h3>{Math.round(weatherData.main.temp - 273.15)}°c</h3>
             </div>
             {/* Air Quality Section */}
             <div className="air-quality-outer-container bg-l mt-3 rounded-5">
@@ -127,7 +125,10 @@ const WeatherBySearch = ({ weatherData, airData, forecastData }) => {
             <h3 className="mb-2 name1">Feels Like</h3>
             <div className="d-flex justify-content-between">
               <img src="/images/temperature.png" alt="feels_like" />
-              <p className="fs-2">{weatherData.main.feels_like}°C</p>
+              <p className="fs-2">
+                {Math.round(weatherData.main.feels_like - 273.15)}
+                °C
+              </p>
             </div>
           </div>
         </div>
