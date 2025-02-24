@@ -41,17 +41,11 @@ img {
   transform: translateX(-50%);
 }
 /* serached weather container */
-.right-content {
-  background-color: #09b1ec;
-}
-/* searchedWeather */
 
-.small-container {
-  background-color: #65c2f5;
-}
 .bg-d {
   background-color: #09b1ec;
 }
+
 .bg-l {
   background-color: #65c2f5;
 }
@@ -60,4 +54,66 @@ img {
   .mt-xxs-6 {
     margin-top: 6rem !important; /* Adjust as needed */
   }
+}
+
+/* Dark Mode */
+.dark-mode {
+  /* background-color: #121212 !important; */
+  color: black !important;
+}
+
+/* Theme Toggle Button (Bootstrap-styled) */
+.theme-toggle {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+}
+.mode-btn {
+  backdrop-filter: blur(10px);
+  padding: 12px 18px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 50px;
+  border: none;
+  background: transparent;
+  color: #ecdfcc;
+  position: fixed;
+  bottom: 4rem;
+  right: 20px;
+  transition: all 0.3s ease-in-out;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
+    rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+}
+
+.mode-btn:hover {
+  background-color: white !important;
+  color: black !important;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+    rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+
+/* dark mode setup */
+.dark-mode .app,
+.dark-mode header {
+  background-color: #181c14;
+  color: #ecdfcc;
+}
+
+.dark-mode header input {
+  padding: 0.8rem;
+  border-radius: 2rem;
+  margin-right: 0.4rem;
+  background-color: #3c3d37;
+}
+.dark-mode .bg-d {
+  background-color: #3c3d37;
+}
+.dark-mode .bg-l {
+  background-color: #181c14;
+}
+.dark-mode .theme-btn,
+.dark-mode input {
+  background-color: #3c3d37;
+  color: #ecdfcc;
 }
