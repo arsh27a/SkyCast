@@ -77,11 +77,10 @@ const Navbar = ({ setWeatherData, setForecastData, setAirData }) => {
                 placeholder="Search your City..."
                 name="location"
                 value={searchByUser}
-                className="text-black"
                 onChange={handleInput}
               />
-              <button type="submit" className="submit">
-                <i className="bi bi-search"></i>
+              <button type="submit" className="submit theme-btn">
+                <i className="bi bi-search icon-theme"></i>
               </button>
             </form>
           </div>
